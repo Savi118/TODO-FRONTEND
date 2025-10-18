@@ -58,17 +58,15 @@ const Login = ({ setToken }) => {
 
   return (
     <div className="min-h-[92vh] w-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col justify-center items-center px-4 relative overflow-hidden">
-      {/* Background decorative elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-indigo-200 rounded-full opacity-20 animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-20 w-16 h-16 bg-purple-200 rounded-full opacity-20 animate-pulse delay-500"></div>
-      
+
       <div className="w-full max-w-md relative z-10">
         <form
           onSubmit={handleSubmit(onSubmit, handleFormErrors)}
           className="bg-white/80 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center p-8 space-y-6 shadow-2xl border border-white/20"
         >
-          {/* Logo and Title */}
           <div className="text-center space-y-2">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl mx-auto flex items-center justify-center mb-4">
               <span className="text-white text-2xl font-bold">T</span>
@@ -79,10 +77,11 @@ const Login = ({ setToken }) => {
             <p className="text-gray-600 text-sm">Sign in to your account</p>
           </div>
 
-          {/* Form Fields */}
           <div className="w-full space-y-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Email Address</label>
+              <label className="text-sm font-medium text-gray-700">
+                Email Address
+              </label>
               <input
                 type="email"
                 {...register("email", {
@@ -96,9 +95,11 @@ const Login = ({ setToken }) => {
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-700 placeholder-gray-400"
               />
             </div>
-            
+
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-700">Password</label>
+              <label className="text-sm font-medium text-gray-700">
+                Password
+              </label>
               <input
                 type="password"
                 {...register("password", {
@@ -119,7 +120,6 @@ const Login = ({ setToken }) => {
             </div>
           </div>
 
-          {/* Login Button */}
           <button
             type="submit"
             disabled={loading}
@@ -139,16 +139,16 @@ const Login = ({ setToken }) => {
             )}
           </button>
 
-          {/* Divider */}
           <div className="w-full flex items-center space-x-4">
             <div className="flex-1 h-px bg-gray-200"></div>
             <span className="text-sm text-gray-500">or</span>
             <div className="flex-1 h-px bg-gray-200"></div>
           </div>
 
-          {/* Sign Up Link */}
           <div className="text-center">
-            <span className="text-sm text-gray-600">Don't have an account? </span>
+            <span className="text-sm text-gray-600">
+              Don't have an account?{" "}
+            </span>
             <Link
               to="/signup"
               className="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline transition-colors"
@@ -158,7 +158,7 @@ const Login = ({ setToken }) => {
           </div>
         </form>
       </div>
-      
+
       <ToastModal
         message={toast.message}
         type={toast.type}

@@ -2,8 +2,8 @@ import { Navigate, Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Login from "./pages/login";
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import AppPage from "./pages/AppPage";
 import { use, useState } from "react";
 import PrivateRoute from "./utils/PrivateRoute";
@@ -48,7 +48,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        
+
         <Route path="/" element={<Navigate to={token ? "/app" : "/home"} />} />
       </Routes>
     </>
